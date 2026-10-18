@@ -2,47 +2,45 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bandar Flores - Warung Online Ruteng</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bandar Pulsa Flores - 24 Jam</title>
 <style>
-body{font-family:system-ui,sans-serif;margin:0;background:#0f172a;color:white}
-header{background:#f59e0b;color:#000;padding:20px;text-align:center}
-.hero{padding:30px 20px;text-align:center}
-.hero h1{font-size:28px;margin:0}
-.hero p{opacity:0.8}
-.produk{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
-.card{background:#1e293b;border-radius:15px;padding:15px;text-align:center}
-.card h3{margin:10px 0 5px;font-size:16px}
-.card p{font-size:13px;opacity:0.7}
-.harga{color:#fbbf24;font-weight:bold;font-size:18px;margin:10px 0}
-.btn{background:#22c55e;color:white;border:none;padding:10px 15px;border-radius:10px;width:100%;font-weight:bold}
-footer{background:#1e293b;padding:20px;text-align:center;margin-top:30px;font-size:13px;opacity:0.7}
-.wa{position:fixed;bottom:20px;right:20px;background:#22c55e;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 5px 20px rgba(0,0,0,0.5)}
+body{font-family:sans-serif;margin:0;background:#020617;color:#fff}
+header{background:#f59e0b;color:#000;padding:18px;text-align:center}
+.box{background:#1e293b;margin:12px;padding:15px;border-radius:12px}
+input{width:100%;padding:12px;margin:6px 0;border-radius:10px;border:none;font-size:16px;box-sizing:border-box}
+.item{background:#0f172a;padding:12px;border-radius:8px;text-align:center;border:1px solid #334155;display:inline-block;width:44%;margin:4px;cursor:pointer}
+.item.b{border:2px solid #f59e0b;background:#1e293b}
+.harga{color:#fbbf24;font-weight:bold}
+.btn{background:#22c55e;color:#fff;border:none;padding:14px;width:100%;border-radius:10px;font-weight:bold;margin-top:10px;font-size:16px}
 </style>
 </head>
 <body>
 <header>
-<h2>🔥 BANDAR FLORES 2026 🔥</h2>
-<p>Warung Online Nagekeo - Ruteng - Flores</p>
+<h2>⚡ BANDAR PULSA FLORES ⚡</h2>
+<p>Ruteng - Nagekeo - Flores - 24 Jam</p>
+<p>WA: 085292205225</p>
 </header>
-<div class="hero">
-<h1>Selamat Datang di Warung Kami!</h1>
-<p>Grosir & Eceran - Harga Bandar - Kirim Seluruh Flores</p>
-<p>📍 Ruteng, Manggarai - NTT</p>
+<div class="box">
+<h3>📱 1. Nomor HP Tujuan</h3>
+<input id="hp" type="tel" placeholder="Contoh: 081234567890">
+<h3>💰 2. Pilih Nominal Pulsa</h3>
+<div>
+<div class="item" onclick="pilih(this,'TSEL 5K - 7rb')"><b>TSEL 5K</b><br><span class="harga">Rp 7.000</span></div>
+<div class="item" onclick="pilih(this,'TSEL 10K - 12rb')"><b>TSEL 10K</b><br><span class="harga">Rp 12.000</span></div>
+<div class="item" onclick="pilih(this,'TSEL 20K - 22rb')"><b>TSEL 20K</b><br><span class="harga">Rp 22.000</span></div>
+<div class="item" onclick="pilih(this,'TSEL 50K - 52rb')"><b>TSEL 50K</b><br><span class="harga">Rp 52.000</span></div>
+<div class="item" onclick="pilih(this,'XL 10K - 11.5rb')"><b>XL 10K</b><br><span class="harga">Rp 11.500</span></div>
+<div class="item" onclick="pilih(this,'DANA 50K - 52rb')"><b>DANA 50K</b><br><span class="harga">Rp 52.000</span></div>
 </div>
-<div class="produk">
-<div class="card">
-<h3>☕ Kopi Flores Bajawa</h3>
-<p>Asli Pegunungan Flores - 1kg</p>
-<div class="harga">Rp 85.000</div>
-<button class="btn" onclick="pesan('Kopi Flores Bajawa')">Pesan WA</button>
+<h3>🛒 3. Pesanan</h3>
+<input id="prod" readonly placeholder="Pilih pulsa dulu">
+<button class="btn" onclick="beli()">BELI SEKARANG - VIA WA</button>
 </div>
-<div class="card">
-<h3>🌽 Jagung Titi</h3>
-<p>Makanan Khas Flores - 500gr</p>
-<div class="harga">Rp 35.000</div>
-<button class="btn" onclick="pesan('Jagung Titi')">Pesan WA</button>
-</div>
-<div class="card">
-<h3>🍯 Madu Hutan Flores</h3>
-<p>M
+<script>
+let p="";
+function pilih(e,n){document.querySelectorAll('.item').forEach(x=>x.classList.remove('b'));e.classList.add('b');document.getElementById('prod').value=n;p=n}
+function beli(){let h=document.getElementById('hp').value;if(h.length<10)return alert('Isi nomor HP dulu bro!');if(!p)return alert('Pilih pulsa dulu!');let wa="6285292205225";window.open("https://wa.me/"+wa+"?text=Halo%20Bandar%20Pulsa%20Flores,%20saya%20mau%20beli%20"+encodeURIComponent(p)+"%20untuk%20nomor%20"+h,"_blank")}
+</script>
+</body>
+</html>
